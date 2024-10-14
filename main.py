@@ -44,15 +44,15 @@ stealth(driver,
 driver.get("https://chat.openai.com/chat")
 # driver.get("https://antcpt.com/score_detector/")
 
-# 显式等待，直到输入框可见并可交互
-input_box = WebDriverWait(driver, 10).until(
-    EC.element_to_be_clickable((By.ID, "prompt-textarea"))
-)
-
 # 提示登录，用户需要手动登录
 input("请在浏览器中登录ChatGPT账户，然后按下Enter键继续...")
 
 def send_message_to_chatgpt(message):
+
+    # 显式等待，直到输入框可见并可交互
+    input_box = WebDriverWait(driver, 10).until(
+        EC.element_to_be_clickable((By.ID, "prompt-textarea"))
+    )
 
     # 在输入框中输入消息
     input_box.send_keys(message)
