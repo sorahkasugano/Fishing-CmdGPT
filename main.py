@@ -8,13 +8,13 @@ from selenium.webdriver.chrome.service import Service
 import time
 
 # 设置ChromeDriver路径
-CHROME_DRIVER_PATH = "path to your chromedriver.exe"
+CHROME_DRIVER_PATH = "D:/chrome/ChromeDriver/chromedriver-win64/chromedriver.exe" #Path to your chrome driver
 
 # 初始化Chrome浏览器
 options = webdriver.ChromeOptions()
-# options.add_argument("--headless")  # 可选：隐藏浏览器窗口
+options.add_argument("--headless")  # 可选：隐藏浏览器窗口
 options.add_argument("--disable-blink-features=AutomationControlled")
-options.add_argument("user-data-dir=Path to your chrome profile") #Path to your chrome profile
+options.add_argument("user-data-dir=C:\\Users\\Kasug\\AppData\\Local\\Google\\Chrome\\User Data") #Path to your chrome profile
 options.add_argument("--no-sandbox")  # 禁用沙盒模式
 options.add_argument("--disable-dev-shm-usage")  # 使用/dev/shm共享内存
 options.add_argument("--remote-debugging-port=9222")  # 启用远程调试端口
@@ -59,7 +59,9 @@ def send_message_to_chatgpt(message):
     input_box.send_keys(Keys.ENTER)  # 模拟按下回车键
 
     # 等待ChatGPT响应
-    time.sleep(60)  # 调整等待时间，确保响应已生成
+    WebDriverWait(driver, 120).until(
+        EC.invisibility_of_element_located((By.XPATH, '//button[@data-testid="stop-button"]'))
+    )
 
     # 获取所有的对话元素
     conversation_turns = driver.find_elements(By.TAG_NAME, "article")
