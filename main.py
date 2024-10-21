@@ -7,22 +7,19 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.chrome.service import Service
 import asyncio
 from discord_bot import client
-
-# 设置ChromeDriver路径
-CHROME_DRIVER_PATH = ""  #Path to your chrome driver
+from conf import config
 
 # 初始化Chrome浏览器
 options = webdriver.ChromeOptions()
 options.add_argument("--headless")  # 可选：隐藏浏览器窗口
 options.add_argument("--disable-blink-features=AutomationControlled")
-options.add_argument(
-    "user-data-dir=")  #Path to your chrome profile
+options.add_argument(config["CHROME_PROFILE_PATH"])
 options.add_argument("--no-sandbox")  # 禁用沙盒模式
 options.add_argument("--disable-dev-shm-usage")  # 使用/dev/shm共享内存
 options.add_argument("--remote-debugging-port=9222")  # 启用远程调试端口
 
 # 使用Service来启动ChromeDriver
-service = Service(CHROME_DRIVER_PATH)
+service = Service(config["CHROME_DRIVER_PATH"])
 driver = webdriver.Chrome(service=service, options=options)
 driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
     "source": """

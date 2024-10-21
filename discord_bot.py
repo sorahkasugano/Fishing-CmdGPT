@@ -3,15 +3,7 @@ import time
 
 import discord
 import aiohttp
-
-# Discord 机器人Token
-DISCORD_TOKEN = ""  # 替换为你Discord机器人token
-
-# Discord 频道ID
-CHANNEL_ID = 123456789  # 替换为你要发送消息的频道ID
-
-# 代理设置
-PROXY_URL = "http://127.0.0.1:7891"  # Discord.com不能直接连接，我添加了代理，替换成你本地的代理地址和端口
+from conf import config
 
 # 创建 Discord 客户端
 intents = discord.Intents.default()
@@ -26,7 +18,7 @@ class MyClient(discord.Client):
 
     async def on_ready(self):
         print(f'已登录到 Discord 为 {self.user}')
-        self.channel = client.get_channel(CHANNEL_ID)
+        self.channel = client.get_channel(config["CHANNEL_ID"])
         if self.channel:
             print(f'已连接到频道: {self.channel}')
         else:
@@ -54,8 +46,8 @@ class MyClient(discord.Client):
         """后台运行 Discord 客户端"""
         async with aiohttp.ClientSession(connector=aiohttp.TCPConnector()) as session:
             self.http._session = session
-            self.http.proxy = PROXY_URL  # 设置代理
-            await self.start(DISCORD_TOKEN)  # 阻塞在 start() 内部
+            self.http.proxy = config["PROXY_URL"]  # 设置代理
+            await self.start(config["DISCORD_TOKEN"])  # 阻塞在 start() 内部
 
 
 client = MyClient(intents=intents)

@@ -1,0 +1,7 @@
+{
+  "CHROME_DRIVER_PATH": "path to your chromedriver",
+  "CHROME_PROFILE_PATH": "path to your chrome profile",
+  "DISCORD_TOKEN": "path to your discord robot token",
+  "CHANNEL_ID": 123456789,
+  "PROXY_URL": "path to your proxy url"
+}
