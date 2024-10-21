@@ -51,3 +51,8 @@ class MyClient(discord.Client):
 
 
 client = MyClient(intents=intents)
+
+
+def discord_init():
+    asyncio.create_task(client.run_client_in_background())
+

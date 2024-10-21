@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3844fce4-92b7-418f-8405-d4ef01ce7555" name="更改" comment="添加Discord机器人，将对话转发至channel，使用手机语音播报方式阅读消息">
-      <change afterPath="$PROJECT_DIR$/conf.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
+    <list default="true" id="3844fce4-92b7-418f-8405-d4ef01ce7555" name="更改" comment="添加json配置文件，参数转配置">
+      <change afterPath="$PROJECT_DIR$/cmd.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.json" beforeDir="false" afterPath="$PROJECT_DIR$/config.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/discord_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/discord_bot.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
@@ -160,7 +161,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729493348578</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="添加json配置文件，参数转配置">
+      <option name="closed" value="true" />
+      <created>1729495339580</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1729495339580</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -168,6 +177,7 @@
     <MESSAGE value="update README" />
     <MESSAGE value="调整响应等待，改为判断stop-button消失" />
     <MESSAGE value="添加Discord机器人，将对话转发至channel，使用手机语音播报方式阅读消息" />
-    <option name="LAST_COMMIT_MESSAGE" value="添加Discord机器人，将对话转发至channel，使用手机语音播报方式阅读消息" />
+    <MESSAGE value="添加json配置文件，参数转配置" />
+    <option name="LAST_COMMIT_MESSAGE" value="添加json配置文件，参数转配置" />
   </component>
 </project>
